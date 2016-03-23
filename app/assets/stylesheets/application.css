@@ -1,0 +1,127 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require rails_bootstrap_forms
+ *= require_tree .
+ *= require_self
+ */
+
+html, body {
+  height: 100%;
+  font-family: 'Carrois Gothic SC', sans-serif;
+}
+.splash-container {
+  position: relative;
+  top: 20%;
+}
+.splash-title {
+  margin: 0 auto;
+  font-size: 12vw;
+}
+.site-header {
+padding: 0;
+margin: 0;
+}
+.header-title a {
+  margin-left: 8px
+}
+.create-link {
+  margin-left: 8px;
+}
+.my-link {
+  margin-top: 3%;
+  letter-spacing: 15px;
+  display: inline-block;
+}
+a:hover {
+  text-decoration: none;
+}
+.event-container {
+  width: 40%;
+}
+.event-description {
+  word-wrap: break-word;
+}
+.guest-list {
+  margin: 20px auto 0 auto;
+}
+.form-container {
+  width: 40%;
+  margin: 40px auto 0 auto;
+}
+
+.guest-form {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.better-form {
+  font-style: italic;
+  border-style: groove;
+  border-top: none;
+  border-right: none;
+  border-top-style: none;
+  border-left-style: groove;
+}
+
+.better-form:focus {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px orange;
+}
+
+.modify-line {
+  display: inline-block;
+}
+
+.date-line {
+  margin-top: -5px;
+  display: inline-block;
+}
+
+.new-date-line {
+  width: 40px;
+}
+
+.lil {
+  position:relative;
+  left: -40px;
+  font-size: 2vw;
+}
+
+.guest-total {
+  margin: 20px auto 20px auto;
+}
+
+.name-container {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border-bottom: none;
+  margin-bottom: -20px;
+}
+.modify-container {
+  margin-bottom: 50px;
+}
+/*@media screen and (min-width: 400px) {
+  .form-container {
+    width: 33%;
+  }
+}*/
+
+.event-display {
+  display: inline-block;
+}
+
+.event-img {
+  width: 400px;
+  height: 420px;
+}

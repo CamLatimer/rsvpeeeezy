@@ -1,0 +1,31 @@
+<header class="container site-header">
+      <h1 class="header-title"><em><%= link_to 'RSVPeezy', :root %></em></h1>
+</header>
+
+<% if @current_user %>
+  <h4 class="create-link"><%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %></h4>
+  <h4 class="create-link"><%= link_to 'Create New Event', new_event_path %></h4>
+  <h4 class="create-link"><%= link_to 'Browse All Events', events_path %></h4>
+  <h4 class="create-link"><%= link_to "edit profile", edit_user_path(@current_user) %></h4>
+  <h4 class="create-link"><%= link_to "Sign Out", session_path, method: :delete %></h4>
+<% else %>
+  <h4 class="create-link"><%= link_to 'Sign Up', new_user_path %></h3>
+  <h4 class="create-link"><%= link_to 'Sign In', new_session_path %>
+<% end %>
+
+<h1 class="text-center">MY Events</h1>
+<div class="container elist-container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 text-center">
+      <% @user_events.each do |event| %>
+      <div class="name-container">
+        <h2 class='event-line'><%= link_to event.name,  event_path(event) %></h2>
+      </div>
+      <div class="modify-container">
+        <h4 class='event-line modify-line'><%= link_to 'Edit', edit_event_path(event) %></h2> |
+        <h4 class='event-line modify-line'><%= link_to 'Delete', event_path(event), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} %></h2>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
