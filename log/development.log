@@ -56975,3 +56975,499 @@ Processing by UsersController#show as HTML
   [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 1]]
   Rendered users/show.html.erb within layouts/application (25.8ms)
 Completed 200 OK in 117ms (Views: 87.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2016-03-23 16:56:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SplashController#index as HTML
+  Rendered splash/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 895ms (Views: 804.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2016-03-23 16:56:40 -0400
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 110ms (Views: 109.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2016-03-23 16:56:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sN+U9b/R/IF/9SS4DZcXrmcGwcTagjYIosNly7PehBI+O+tr6hQ+UXuY4IwozckNnR/TPuQCeZh/gr607fle8Q==", "user"=>{"username"=>"cam0", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "cam0"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "cam0"]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 61ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/users/1" for ::1 at 2016-03-23 16:56:50 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 142ms (Views: 95.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/events/1" for ::1 at 2016-03-23 16:56:52 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (78.5ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 79.2ms)
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    17:   <div class="container event-container text-center">
+    18: 
+    19:     <h2 class="text-center"><%= @event.name %></h2>
+    20:     <h2 class="text-center"><%= @event.date.strftime("%m-%d-%Y") %></h2>
+    21: 
+    22:   <div class="flyer text-center">
+    23:     <%= image_tag @event.img_url, :class => 'event-img' %>
+  app/views/events/show.html.erb:20:in `_app_views_events_show_html_erb___2484106259487886210_70115682512860'
+
+
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (143.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (99.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (223.0ms)
+
+
+Started GET "/events/1" for ::1 at 2016-03-23 16:56:52 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    17:   <div class="container event-container text-center">
+    18: 
+    19:     <h2 class="text-center"><%= @event.name %></h2>
+    20:     <h2 class="text-center"><%= @event.date.strftime("%m-%d-%Y") %></h2>
+    21: 
+    22:   <div class="flyer text-center">
+    23:     <%= image_tag @event.img_url, :class => 'event-img' %>
+  app/views/events/show.html.erb:20:in `_app_views_events_show_html_erb___2484106259487886210_70115681722600'
+
+
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.9ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (138.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (93.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (208.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (7.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'guests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (6.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/events/1" for ::1 at 2016-03-23 16:57:18 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 6.9ms)
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    17:   <div class="container event-container text-center">
+    18: 
+    19:     <h2 class="text-center"><%= @event.name %></h2>
+    20:     <h2 class="text-center"><%= @event.date.strftime("%m-%d-%Y") %></h2>
+    21: 
+    22:   <div class="flyer text-center">
+    23:     <%= image_tag @event.img_url, :class => 'event-img' %>
+  app/views/events/show.html.erb:20:in `_app_views_events_show_html_erb___2484106259487886210_70115681722600'
+
+
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (135.0ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (205.1ms)
+
+
+Started GET "/events/1" for ::1 at 2016-03-23 16:57:47 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (1.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (21.3ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 3.7ms)
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    17:   <div class="container event-container text-center">
+    18: 
+    19:     <h2 class="text-center"><%= @event.name %></h2>
+    20:     <h2 class="text-center"><%= @event.date.strftime("%d-%m-%Y") %></h2>
+    21: 
+    22:   <div class="flyer text-center">
+    23:     <%= image_tag @event.img_url, :class => 'event-img' %>
+  app/views/events/show.html.erb:20:in `_app_views_events_show_html_erb___2484106259487886210_70115683953120'
+
+
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (133.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.0ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (207.5ms)
+
+
+Started GET "/events/2" for ::1 at 2016-03-23 16:58:13 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    17:   <div class="container event-container text-center">
+    18: 
+    19:     <h2 class="text-center"><%= @event.name %></h2>
+    20:     <h2 class="text-center"><%= @event.date.strftime("%d-%m-%Y") %></h2>
+    21: 
+    22:   <div class="flyer text-center">
+    23:     <%= image_tag @event.img_url, :class => 'event-img' %>
+  app/views/events/show.html.erb:20:in `_app_views_events_show_html_erb___2484106259487886210_70115659539480'
+
+
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (138.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.1ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (207.4ms)
+
+
+Started GET "/events/2" for ::1 at 2016-03-23 16:58:14 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    17:   <div class="container event-container text-center">
+    18: 
+    19:     <h2 class="text-center"><%= @event.name %></h2>
+    20:     <h2 class="text-center"><%= @event.date.strftime("%d-%m-%Y") %></h2>
+    21: 
+    22:   <div class="flyer text-center">
+    23:     <%= image_tag @event.img_url, :class => 'event-img' %>
+  app/views/events/show.html.erb:20:in `_app_views_events_show_html_erb___2484106259487886210_70115683953120'
+
+
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (133.1ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (91.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Cam/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (205.0ms)
+
+
+Started GET "/events/new" for ::1 at 2016-03-23 16:58:18 -0400
+Processing by EventsController#new as HTML
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered events/new.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 95ms (Views: 91.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for ::1 at 2016-03-23 16:58:28 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oR7VHj3cN8z87XQy3aoF1PaPGXdpYb0TeWe/auFT08cv+qqAaBn1HPiAsAb48Nt3DJYLjVfh8oOkJmQVv3QJJA==", "event"=>{"name"=>"testEvent", "address"=>"", "city"=>"", "state"=>"", "date"=>"2016-03-24", "start_time"=>"", "end_time"=>"", "img_url"=>"", "description"=>""}, "commit"=>"Submit"}
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Unpermitted parameters: start_time, end_time
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "events" ("name", "address", "city", "state", "date", "description", "img_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "testEvent"], ["address", ""], ["city", ""], ["state", ""], ["date", "2016-03-24 00:00:00.000000"], ["description", ""], ["img_url", ""], ["user_id", 1], ["created_at", "2016-03-23 20:58:28.349752"], ["updated_at", "2016-03-23 20:58:28.349752"]]
+  [1m[35m (9.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 35ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/events/4" for ::1 at 2016-03-23 16:58:28 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."event_id" = $1  [["event_id", 4]]
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."event_id" = $1  ORDER BY created_at DESC[0m  [["event_id", 4]]
+  Rendered events/show.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 87ms (Views: 78.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-03-23 16:58:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 69ms (Views: 64.1ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/events/1" for ::1 at 2016-03-23 16:58:42 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GuM2DuxW6t4KPK1j9NZPuuBGjUsyqwN6+bwFNXZ3NHmUB0mQuZMoDg5RaVfRjJEZGl+fsQwrTOok/d5KKFDumg==", "id"=>"1"}
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 10ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/events" for ::1 at 2016-03-23 16:58:42 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"  ORDER BY created_at DESC
+  Rendered events/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events/4" for ::1 at 2016-03-23 16:58:43 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."event_id" = $1  [["event_id", 4]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."event_id" = $1  ORDER BY created_at DESC[0m  [["event_id", 4]]
+  Rendered events/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/events/4" for ::1 at 2016-03-23 16:58:48 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zUuB2GuyxijgmhaReApCx2m7Fg58KUcGf6hHqJHoGsdDr/5GPncE+OT30qVdUJxkk6IE9EKpCJai6ZzXz8/AJA==", "id"=>"4"}
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 4]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/events" for ::1 at 2016-03-23 16:58:48 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Exists (1.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events"  ORDER BY created_at DESC
+  Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 62ms (Views: 56.9ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/events/3" for ::1 at 2016-03-23 16:58:50 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"74baEDKkA970mY8w6caeolZ/BEaFnuZSsOi4C0QSiiBhYqWOZ2HBDvD0SwTMnEABrGYWvLseqcJtqWN0GjVQww==", "id"=>"3"}
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/events
+Completed 302 Found in 10ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/events" for ::1 at 2016-03-23 16:58:50 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"  ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 63ms (Views: 58.5ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/events/2" for ::1 at 2016-03-23 16:58:53 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ra/+gHMNIQYMBy1hQwaTfjc1LvcW4bqPhfS7CyTWZgnLS4EeJsjj1ghq6VVmXE3dzSw8DShh9R9YtWB0evG86g==", "id"=>"2"}
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.8ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 2]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/events" for ::1 at 2016-03-23 16:58:53 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"  ORDER BY created_at DESC
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/new" for ::1 at 2016-03-23 16:59:00 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events" for ::1 at 2016-03-23 16:59:17 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QFg+CHXvJn3T+YyW6dmAc7SkVw2gNTsMVfAwFZbb2WjOvEGWICrkrdeUSKLMg17QTr1F9561dJyIsetqyPwDiw==", "event"=>{"name"=>"test Event", "address"=>"", "city"=>"", "state"=>"", "date"=>"2016-03-04", "start_time"=>"", "end_time"=>"", "img_url"=>"", "description"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Unpermitted parameters: start_time, end_time
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "events" ("name", "address", "city", "state", "date", "description", "img_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "test Event"], ["address", ""], ["city", ""], ["state", ""], ["date", "2016-03-04 00:00:00.000000"], ["description", ""], ["img_url", ""], ["user_id", 1], ["created_at", "2016-03-23 20:59:17.688510"], ["updated_at", "2016-03-23 20:59:17.688510"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events/5
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/events/5" for ::1 at 2016-03-23 16:59:17 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."event_id" = $1  ORDER BY created_at DESC  [["event_id", 5]]
+  Rendered events/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 86ms (Views: 80.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for ::1 at 2016-03-23 16:59:24 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 64ms (Views: 58.8ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/events/5" for ::1 at 2016-03-23 16:59:31 -0400
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fmvKpHRRIFrvWArWcl88r51FLzNK1PoSx5gjxeRYLOPwj7U6IZTiius1zuJXBeIMZ1w9yXRUtYIa2fi6un/2AA==", "id"=>"5"}
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 5]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/events
+Completed 302 Found in 8ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/events" for ::1 at 2016-03-23 16:59:31 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"  ORDER BY created_at DESC[0m
+  Rendered events/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 55.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for ::1 at 2016-03-23 16:59:42 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 54.4ms | ActiveRecord: 1.5ms)
