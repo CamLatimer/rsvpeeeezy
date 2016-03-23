@@ -1,9 +1,6 @@
-<header class="container site-header">
-      <h1 class="header-title"><em><%= link_to 'RSVPeazy', :root %></em></h1>
-</header>
-
 <h5 class="create-link"><%= link_to 'Back to My Events', events_path %></h5>
 <div class="text-center form-container">
+
 <%= bootstrap_form_for :event, url: events_path do |f| %>
 
     <%= f.text_field :name, :label => "Event Name:", :class => 'better-form' %>

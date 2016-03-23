@@ -1,12 +1,9 @@
-<header class="container site-header">
-      <h1 class="header-title"><em><%= link_to 'RSVPeazy', :root %></em></h1>
-</header>
-<h1>SIGN IN</h1>
+<h1 class="text-center">SIGN IN</h1>
 
-<%= bootstrap_form_for :user, url: session_path, method: :post do |f| %>
-
-  <%= f.text_field :username, label: 'Username', :class => 'better-form' %>
-  <%= f.password_field :password, label: 'Password', :class => 'better-form' %>
-  <%= f.submit "Sign In" %>
-
-<% end %>
+<div class="text-center form-container">
+  <%= bootstrap_form_for :user, url: session_path, method: :post do |f| %>
+    <%= f.text_field :username, label: 'Username', class: 'better-form' %>
+    <%= f.password_field :password, label: 'Password', class: 'better-form' %>
+    <%= f.submit "Sign In" %>
+  <% end %>
+</div>

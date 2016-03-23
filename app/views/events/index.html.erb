@@ -1,21 +1,5 @@
-<header class="container site-header">
-      <h1 class="header-title"><em><%= link_to 'RSVPeazy', :root %></em></h1>
-</header>
+<h1 class="text-center">All Events</h1>
 
-<% if @current_user %>
-  <h4 class="create-link"><%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %></h4>
-  <h4 class="create-link"><%= link_to 'Create New Event', new_event_path %></h4>
-  <h4 class="create-link"><%= link_to "edit profile", edit_user_path(@current_user) %></h4>
-  <h4 class="create-link"><%= link_to 'My Events', user_path(@current_user) %></h4>
-  <h4 class="create-link"><%= link_to "Sign Out", session_path, method: :delete %>
-<% else %>
-  <h4 class="create-link"><%= link_to 'Sign Up', new_user_path %></h3>
-  <h4 class="create-link"><%= link_to 'Sign In', new_session_path %>
-<% end %>
-
-
-
-  <h1 class="text-center">All Events</h1>
 <div class="container elist-container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 text-center event-display">

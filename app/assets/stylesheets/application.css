@@ -21,7 +21,7 @@ html, body {
 }
 .splash-container {
   position: relative;
-  top: 20%;
+  top: 100px;
 }
 .splash-title {
   margin: 0 auto;
