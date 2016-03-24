@@ -12,9 +12,8 @@
         <h1 class="header-title"><em><%= link_to 'RSVPeezy', :root %></em></h1>
   </header>
   <% if @current_user %>
-    <h4 class="create-link"><%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %></h4>
+    <h4 class="create-link"><%= link_to "See Your Events", user_path(@current_user) %></h4>
     <h4 class="create-link"><%= link_to 'Create New Event', new_event_path %></h4>
-    <h4 class="create-link"><%= link_to 'Browse All Events', events_path %></h4>
     <h4 class="create-link"><%= link_to "edit profile", edit_user_path(@current_user) %></h4>
     <h4 class="create-link"><%= link_to "Sign Out", session_path, method: :delete %></h4>
   <% else %>

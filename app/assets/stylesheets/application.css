@@ -92,6 +92,13 @@ a:hover {
   width: 40px;
 }
 
+#address {
+  margin-bottom: -10px;
+}
+#state{
+  margin-bottom: 20px;
+}
+
 .lil {
   position:relative;
   left: -40px;

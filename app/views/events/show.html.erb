@@ -6,18 +6,19 @@
   <div class="flyer text-center">
     <%= image_tag @event.img_url, :class => 'event-img' %>
   </div>
-    <h2 class="text-center"><%= @event.address %></h2>
-    <h2 class="text-center"><%= @event.city %>,</h2>
-    <h2 class="text-center"><%= @event.state %></h2>
+    <h2 class="text-center" id="address"><%= @event.address %></h2>
+    <h2 class="text-center" id="state"><%= @event.city %>, <%= @event.state %></h2>
 
     <div class="event-description text-center">
       <%= @event.description %>
     </div>
     <h4 class="text-center">Are you going?</h4>
+    <h4 class="text-center">RSVP:</h4>
     <div class="guest-form text-center">
       <%= bootstrap_form_for([@event, @event.guests.build]) do |f| %>
-        <%= f.text_field :name, label: "Name:", :class => 'better-form' %>
-        <%= f.text_field :message, label: "Add a Message:", :class => 'better-form' %>
+        <%= f.text_field :name, label: "Name:", class: 'better-form' %>
+        <%= f.text_field :email, label: "Email", class: 'better-form' %>
+        <%= f.text_field :message, label: "Add a Message:", class: 'better-form' %>
         <%= f.submit %>
       <% end %>
     </div>
