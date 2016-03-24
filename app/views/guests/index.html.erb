@@ -1,8 +1,9 @@
-<h1>hello</h1>
+<h1 class="text-center">Guests for <%= @event.name %>:</h1>
+<h1 class="text-center">Total:<%= @event.guests.count %></h1>
 
-<% @event.guests.each do |guest| %>
-
-  <p><%= guest.name %></p>
-  <p><%= guest.email %></p>
-
+<% @event.guests.order('created_at DESC').each do |guest| %>
+<div class="container rsvp-container text-center">
+  <p class="rsvp-line"><%= guest.name %></p>
+  <p class="rsvp-line"><%= guest.email %></p>
+</div>
 <% end %>

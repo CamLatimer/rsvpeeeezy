@@ -14,7 +14,7 @@ guests.destroy_all
 
 11.times do |event_num|
 
-  my_event = Event.create(name: "fake Event #{event_num}", address: "421 19th st NE", city: "Washington, DC", day: 2, month: 27, year: 2017, start_time: "11:00am", end_time: '3:30pm', description: "best time ever!!!!!!!!!!!!!", img_url: 'http://happybirthdaycake.org/wp-content/uploads/2015/06/birthday-cake-images-5.jpg')
+  my_event = Event.create(name: "fake Birthday NO.#{event_num}", address: "421 19th st NE", city: "Washington, DC", day: 2, month: 27, year: 2017, start_time: "11:00am", end_time: '3:30pm', description: "best time ever!!!!!!!!!!!!!", img_url: 'http://vignette3.wikia.nocookie.net/starcars/images/5/5d/Happy-birthday-cake.gif/revision/latest?cb=20121126171657)
 
   4.times do |guest_num|
 
