@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
 
-  def index
-    @events = Event.all.order('created_at DESC')
-  end
+  # def index
+  #   @events = Event.all.order('created_at DESC')
+  # end
 
   def new
     redirect_to :root unless @current_user
