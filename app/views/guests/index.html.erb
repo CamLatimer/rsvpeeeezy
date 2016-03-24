@@ -1,8 +1,8 @@
 <h1>hello</h1>
 
-<% @guests.each do |guest| %>
+<% @event.guests.each do |guest| %>
 
-  <%= guest.name %>
-  <%= guest.email %>
+  <p><%= guest.name %></p>
+  <p><%= guest.email %></p>
 
 <% end %>
