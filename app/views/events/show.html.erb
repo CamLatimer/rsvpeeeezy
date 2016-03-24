@@ -12,6 +12,7 @@
     <div class="event-description text-center">
       <%= @event.description %>
     </div>
+    <h2 class="text-center" id="share">Share Link: <%= event_url(@event) %></h2>
     <h4 class="text-center">Are you going?</h4>
     <h4 class="text-center">RSVP:</h4>
     <div class="guest-form text-center">
@@ -19,7 +20,7 @@
         <%= f.text_field :name, label: "Name:", class: 'better-form' %>
         <%= f.text_field :email, label: "Email", class: 'better-form' %>
         <%= f.text_field :message, label: "Add a Message:", class: 'better-form' %>
-        <%= f.submit %>
+        <%= f.submit "Add" %>
       <% end %>
     </div>
   <h4 class="guest-total">total guests: <%= @event.guests.count %></h4>

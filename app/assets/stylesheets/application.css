@@ -98,6 +98,9 @@ a:hover {
 #state{
   margin-bottom: 20px;
 }
+#share {
+  margin-bottom: 40px;
+}
 
 .lil {
   position:relative;
@@ -130,5 +133,5 @@ a:hover {
 
 .event-img {
   width: 400px;
-  height: 420px;
+  height: 400px;
 }
