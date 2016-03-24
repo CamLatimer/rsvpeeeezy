@@ -27,7 +27,6 @@ html, body {
   margin: 0 auto;
   font-size: 12vw;
 }
-
 .site-header {
 padding: 0;
 margin: 0;
@@ -104,6 +103,9 @@ a:active {
 }
 #share {
   margin-bottom: 40px;
+}
+#splash {
+  position: relative;
 }
 
 .lil {

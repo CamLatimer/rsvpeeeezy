@@ -1,7 +1,9 @@
   <div class="container event-container text-center">
 
     <h2 class="text-center"><%= @event.name %></h2>
-    <h2 class="text-center"><%= @event.date.strftime("%m-%d-%Y") %></h2>
+    <% if @event.date %>
+      <h2 class="text-center"><%= @event.date.strftime("%m-%d-%Y") %></h2>
+    <% end %>
 
   <div class="flyer text-center">
     <%= image_tag @event.img_url, :class => 'event-img' %>
@@ -18,7 +20,7 @@
     <div class="guest-form text-center">
       <%= bootstrap_form_for([@event, @event.guests.build]) do |f| %>
         <%= f.text_field :name, label: "Name:", class: 'better-form' %>
-        <%= f.text_field :email, label: "Email", class: 'better-form' %>
+        <%= f.text_field :email, label: "Email:", class: 'better-form' %>
         <%= f.text_field :message, label: "Add a Message:", class: 'better-form' %>
         <%= f.submit "Add" %>
       <% end %>
@@ -28,7 +30,7 @@
   <div class="text-center guest-list" class="">
     <% @event.guests.order('created_at DESC').each do |guest| %>
         <h6 class"guest-name"><%= guest.name %></h6>
-        <p class="guest-message"><%= guest.message %></p>
+        <p class="guest-message"><em><%= guest.message %></em></p>
     <% end %>
   </div>
 </div>

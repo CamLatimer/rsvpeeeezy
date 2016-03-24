@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('ready page:load', function () {
+
+    $(document).on('mousemove', function(e) {
+      $('#splash').css({left: -(e.pageX / 70), top: -(e.pageY / 40)});
+      // console.log("X: " + event.pageX + ", Y: " + event.pageY);
+    })
+});
