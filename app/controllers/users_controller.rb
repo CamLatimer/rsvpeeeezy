@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    redirect_to :root unless @current_user
     @user = User.find(params[:id])
     @user_events = @user.events.order('created_at DESC')
   end

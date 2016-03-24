@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160323195404) do
     t.string   "start_time"
     t.string   "end_time"
     t.string   "state"
-    t.integer  "user_id"
     t.datetime "date"
   end
 
