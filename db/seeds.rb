@@ -7,13 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# events = Event.all
-# guests = Guest.all
-#
-# events.destroy_all
-# guests.destroy_all
-
-
-
-
 end
