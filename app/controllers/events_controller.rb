@@ -15,9 +15,6 @@ class EventsController < ApplicationController
 
   def create
     redirect_to :root unless @current_user
-    # @event = Event.new(event_params)
-    # @event.save
-    # redirect_to @event
     @user = @current_user
     @event = @user.events.create(event_params)
     redirect_to @event
@@ -40,7 +37,7 @@ class EventsController < ApplicationController
     redirect_to :root unless @current_user
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_path #update if you add user model???
+    redirect_to events_path
   end
 
   private
