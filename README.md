@@ -38,3 +38,6 @@ I styled the site as I went along.  I didn't make it priority over the functiona
 # Technologies
 
 JQuery, CSS, CSS, Ruby on Rails, Postgresql, Bootstrap_form, Git/Github, Heroku.
+
+# Video Walkthrough
+https://youtu.be/JLw5dFmd_ww
