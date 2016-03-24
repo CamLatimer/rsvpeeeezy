@@ -4,6 +4,7 @@
     <% if @event.date %>
       <h2 class="text-center"><%= @event.date.strftime("%m-%d-%Y") %></h2>
     <% end %>
+      <h2 class="text-center"><%= @event.start_time %> to <%= @event.start_time %></h2>
 
   <div class="flyer text-center">
     <%= image_tag @event.img_url, :class => 'event-img' %>
