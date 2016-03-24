@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
 
-  # def index
-  #   @events = Event.all.order('created_at DESC')
-  # end
+  def index
+    @events = Event.all.order('created_at DESC')
+  end
 
   def new
     redirect_to :root unless @current_user
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
     redirect_to :root unless @current_user
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_path
+    redirect_to user_path(@current_user)
   end
 
   private
