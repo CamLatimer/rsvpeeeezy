@@ -1,10 +1,12 @@
 <div class="container splash-container">
-<h1 class="text-center splash-title"><<em><a href="/" id="splash"> R  S V P<span class="lil">eeezy</span></a></em> ></h1>
-<div class="row">
-  <div class="col-md-12 text-center">
-    <% if @current_user %>
-      <h3 class="my-link"><%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %></h3>
-    <% else %>
-    <% end %>
+  <h1 class="text-center splash-title">
+    <<em><a href="/" id="splash"> R  S V P<span class="lil">eeezy</span></a></em> >
+  </h1>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <% if @current_user %>
+        <h3 class="my-link"><%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %></h3>
+      <% else %>
+      <% end %>
   </div>
 </div>
