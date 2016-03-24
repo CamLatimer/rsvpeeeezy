@@ -82,7 +82,7 @@ a:active {
     box-shadow: 0 0 10px orange;
 }
 
-.modify-line {
+.modify-line, .rsvp-line {
   display: inline-block;
 }
 
