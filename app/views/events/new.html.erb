@@ -1,26 +1,5 @@
 <div class="text-center form-container">
-
-<%= bootstrap_form_for :event, url: events_path do |f| %>
-
-    <%= f.text_field :name, :label => "Event Name:", :class => 'better-form' %>
-
-    <%= f.text_field :address, label: "Address:", :class => 'better-form' %>
-
-    <%= f.text_field :city, label: "City:", :class => 'better-form' %>
-
-    <%= f.text_field :state, label: "State:", :class => 'better-form' %>
-
-    <%= f.date_field :date, label: "Date:", :class => 'better-form' %>
-
-    <%= f.time_field :start_time, label: "Start Time:", :class => 'better-form' %>
-
-    <%= f.time_field :end_time, label: "End Time(if any...):", :class => 'better-form' %>
-
-    <%= f.url_field :img_url, label: "image url:", :class => 'better-form' %>
-
-    <%= f.text_area :description, label: "Add a Note:", :class => 'better-form' %>
-
-    <%= f.submit "Submit" %>
-
+  <%= bootstrap_form_for :event, url: events_path do |f| %>
+    <%= render partial: "events_fields", locals: { f: f}%>
+  <% end %>
 </div>
-<% end %>
