@@ -1,5 +1,5 @@
-<h4 class="create-link"><%= link_to 'Create New Event', new_event_path %></h4>
-<h5 class="create-link"><%= link_to 'Back to My Events', events_path %></h5>
+<h4 class="nav-link"><%= link_to 'Create New Event', new_event_path %></h4>
+<h5 class="nav-link"><%= link_to 'Back to My Events', events_path %></h5>
 
 <div class="text-center form-container">
 <%= bootstrap_form_for :event, url: event_path(@event), method: :patch do |f| %>
