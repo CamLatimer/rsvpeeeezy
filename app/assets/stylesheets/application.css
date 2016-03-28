@@ -127,11 +127,6 @@ a:active {
 .modify-container {
   margin-bottom: 50px;
 }
-/*@media screen and (min-width: 400px) {
-  .form-container {
-    width: 33%;
-  }
-}*/
 
 .event-display {
   display: inline-block;
