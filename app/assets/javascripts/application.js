@@ -12,12 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.mousewheel.js
 //= require turbolinks
 //= require_tree .
-$(document).on('ready', function () {
 
-    $(document).on('mousemove', function(e) {
-      $('#splash').css({left: -(e.pageX / 30), right: e.pageX / 20, top: -(e.pageY / 40)});
-      // console.log("X: " + event.pageX + ", Y: " + event.pageY);
-    })
+
+$(document).on('ready', function () {
+    $(document).mousemove(function(e) {
+      $('#splash').css({left: -(e.pageX / 30), right: e.pageX / 20, top: -(e.pageY / 35)});
+    });
 });

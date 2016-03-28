@@ -141,3 +141,11 @@ a:active {
   width: 400px;
   height: 400px;
 }
+
+.singles-container {
+  display: inline-block;
+}
+.my-events-container {
+  white-space : nowrap;
+  width: 100%;
+}

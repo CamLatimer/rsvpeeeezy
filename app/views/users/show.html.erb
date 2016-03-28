@@ -1,17 +1,16 @@
 <h1 class="text-center">MY Events</h1>
-<div class="container elist-container">
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3 text-center">
+
+    <div class="col-xs-6 col-xs-offset-3 my-events-container">
       <% @user_events.each do |event| %>
-      <div class="name-container">
-        <h2 class='event-line'><%= link_to event.name,  event_path(event) %></h2>
-      </div>
-      <div class="modify-container">
-        <h4 class='event-line modify-line'><%= link_to 'Edit', edit_event_path(event) %></h2> |
-        <h4 class='event-line modify-line'><%= link_to 'Delete', event_path(event), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} %></h2> |
-        <h4 class='event-line modify-line'><%= link_to 'Guests', event_guests_path(event) %></h2>
+      <div class="singles-container">
+        <div class="name-container">
+          <h2 class='event-line'><%= link_to event.name,  event_path(event) %></h2>
+        </div>
+        <div class="modify-container">
+          <h4 class='event-line modify-line'><%= link_to 'Edit', edit_event_path(event) %></h2> |
+          <h4 class='event-line modify-line'><%= link_to 'Delete', event_path(event), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} %></h2> |
+          <h4 class='event-line modify-line'><%= link_to 'Guests', event_guests_path(event) %></h2>
+        </div>
       </div>
       <% end %>
     </div>
-  </div>
-</div>
