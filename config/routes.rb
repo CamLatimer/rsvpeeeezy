@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'splash#index'
 
+  # nice job using nested resources!
+
   resources :events do
     resources :guests
   end
@@ -10,5 +12,5 @@ Rails.application.routes.draw do
   end
 
   resource :session
-  
+
 end

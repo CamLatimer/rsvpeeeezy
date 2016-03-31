@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+  # nice job implementing users and sessions!
   def new
   end
 
