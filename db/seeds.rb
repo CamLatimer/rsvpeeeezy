@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-end
+# I Definitely would take some time to add seeds data! It's alot more difficult getting functionality without having it
+# I recommend doing your schema then seeds before moving on to any controllers or views

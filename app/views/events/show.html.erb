@@ -1,5 +1,6 @@
 <div class="container event-container text-center">
 
+  <!--I would try to change the name text-center to something a little more semantic since you are adding that same class throughout your code  -->
     <h2 class="text-center"><%= @event.name %></h2>
     <% if @event.date %>
       <h2 class="text-center"><%= @event.date.strftime("%m-%d-%Y") %></h2>
